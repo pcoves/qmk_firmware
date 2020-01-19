@@ -16,7 +16,6 @@
 
 #define SFT_ENT SFT_T(KC_ENT)
 
-#define RU_TOGGLE RAINBOW_UNICORN_TOGGLE
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
