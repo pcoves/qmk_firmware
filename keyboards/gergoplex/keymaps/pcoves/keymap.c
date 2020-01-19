@@ -6,7 +6,7 @@
 #define LAYER_0 0
 #define LAYER_1 1
 
-#define L1_SPC LT(1, KC_SPC)
+#define L1_SPC LT(LAYER_1, KC_SPC)
 
 #define CTL_A CTL_T(KC_A)
 #define CTL_SCLN CTL_T(KC_SCLN)
