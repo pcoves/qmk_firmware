@@ -16,7 +16,9 @@
 
 #define SFT_ENT SFT_T(KC_ENT)
 
+#ifdef RAINBOW_UNICORN_ENABLE
 #define RU_TOGGLE RAINBOW_UNICORN_TOGGLE
+#endif
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -31,9 +33,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_F2,     KC_1,      KC_2,      KC_3,      KC_4,      KC_5,                                                KC_6,      KC_7,      KC_8,      KC_9,      KC_0,      RESET,
             KC_F3,     _______,   KC_HOME,   KC_PGDN,   KC_PGUP,   KC_END,  _______,                         _______,   KC_LEFT,   KC_DOWN,   KC_UP,     KC_RGHT,   _______,   EEP_RST,
 #if SECRET_ENABLE
-            KC_F4,     SECRET0,   SECRET1,   SECRET2,   SECRET3,   SECRET4, _______,   _______,   _______,   _______,   EMOTE0,    EMOTE1,    EMOTE2,    EMOTE3,    AUTRUCHE,  RU_TOGGLE,
+            KC_F4,     SECRET0,   SECRET1,   SECRET2,   SECRET3,   SECRET4, _______,   _______,
 #else
-            KC_F4,     _______,   _______,   _______,   _______,   _______, _______,   _______,   _______,   _______,   EMOTE0,    EMOTE1,    EMOTE2,    EMOTE3,    AUTRUCHE,  RU_TOGGLE,
+            KC_F4,     _______,   _______,   _______,   _______,   _______, _______,   _______,
+#endif
+#if UNICODE_ENABLE
+                                                                                                    _______,   _______,   EMOTE0,    EMOTE1,    EMOTE2,    EMOTE3,    AUTRUCHE,
+#else
+                                                                                                    _______,   _______,  _______,   _______,   _______,   _______,    AUTRUCHE,
+#endif
+
+#if RAINBOW_UNICORN_ENABLE
+                                                                                                                                                                                    RU_TOGGLE,
+#else
+                                                                                                                                                                                    _______,
 #endif
                                                         _______,   _______, _______,   _______,   _______,   _______,   _______,   _______
             ),
